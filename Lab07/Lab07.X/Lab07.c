@@ -30,13 +30,44 @@
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
+// Declaraciones de variables
+    char Contador1 = 0;
+    char Dis_Centena;
+    char Dis_Decena;
+    char Dis_Unidad;
+    float Division;
+    char Centena;
+    char Decena;
+    char Unidad;
+    char multi = 1;
+void __interrupt() isr (void){
+    // Interrupcion del timer0
+    if (T0IF == 1){
+        //Contador1++;
+        multi = 1;
+        TMR0 = 246;  
+        T0IF = 0;
+    } // Fin de interrupción timer0
     
+    // Interrupcion del PORTB
+    if (RBIF == 1){
+       
+        if(RB6 == 0){
+            PORTC++;
+        }
+        if(RB7 == 0){
+            PORTC--;
+        }
+        RBIF = 0; 
+    }// Fin de interrupción del PORTB
+}    
 
 void main(void) {
     // Oscilador
-    IRCF0 = 1;       // Configuración del reloj interno 
+    IRCF0 = 0;       // Configuración del reloj interno 
     IRCF1 = 1;
-    IRCF2 = 0;       // 500khz   
+    IRCF2 = 1;       // 500khz   
+    
     // Configurar Timer0
     PS0 = 1;
     PS1 = 0;
@@ -44,39 +75,87 @@ void main(void) {
     T0CS = 0;
     PSA = 0;
     INTCON = 0b10101000;
+    TMR0 = 246;
+    
+    // Configuración del puerto B
+    OPTION_REGbits.nRBPU = 0;
+    WPUBbits.WPUB7=1;
+    WPUBbits.WPUB6=1;
+    
+    // Activación Interrup on change
+    IOCB7 = 1;
+    IOCB6 = 1;
     
     // Configurar puertos
-    TRISA = 0;  // Definir el puerto A como salida
-    TRISC = 0;  // Definir el puerto C como salida
-    TRISD = 0;  // Definir el puerto D como salida
-    TRISE = 0;  // Definir el puerto D como salida
+    ANSEL  = 0;
+    ANSELH = 0;
+    TRISA  = 0b11111000;  // Definir el puerto A como salida
+    TRISC  = 0;  // Definir el puerto C como salida
+    TRISD  = 0;  // Definir el puerto D como salida
+    TRISE  = 0;  // Definir el puerto E como salida
+    
     //Limpieza de puertos
+    PORTA = 0;
     PORTB = 0;
     PORTC = 0;
-    PORTD = 01;
+    PORTD = 0;
     PORTE = 0;
-    // Declaraciones de variables
-    int B_Inc = RB7;
-    int B_Dec = RB6;
-    int Unidades = RE2;
-    int Decenas  = RE1;
-    int Centenas = RE0;
-    int Contador1 = 0;
+    RA0 =1;
+    char tabla [16]= {
+        0b0111111, // Cero
+        0b0000110, // Uno
+        0b1011011, // Dos
+        0b1001111, // Tres
+        0b1100110, // Cuatro
+        0b1101101, // Cinco
+        0b1111101, // Seis 
+        0b0000111, // Siete
+        0b1111111, // Ocho
+        0b1100111, // Nueve
+        0b1110111, // A
+        0b1111100, // B
+        0b0111001, // C
+        0b1011110, // D
+        0b1111001, // E
+        0b1110001, // F
+    }; 
     //loop principal
-    for(;;){  
-        
-        RE2 =1;
-        
+    while(1){  
+        if (multi == 1){
+            multi = 0;
+            C_D_U(PORTC);
+            PORTD = 0;
+            if (RA0 == 1){
+                PORTD = tabla[Decena];
+                PORTA = 0b010;
+            }
+            else if(RA1 == 1){
+                PORTD = tabla[Unidad];
+                PORTA = 0b100;
+            }
+            else{
+                PORTD = tabla[Centena];
+                PORTA = 0b001;
+            }
+        }
     } // fin loop principal while
     
 } // fin main
 
-void __interrupt() isr (void){
+int C_D_U (variable){
+    Division = variable/100;
+    Centena = (int)Division;
     
-    // Interrupcion del timer0
-    if (T0IF == 1){
-        T0IF = 0;
-        
-        TMR0 = 0;    
-    } // Fin de If interrupcion timer0
+    variable = variable-100*Centena;
+    Division = variable/10;
+    Decena = (int)Division;
+    
+    
+    variable = variable-10*Decena;
+    Division = variable;
+    Unidad = (int)Division;
+    
+    //char Valores[3]={Centena,Decena,Unidad};
+    //return Valores;
 }
+  

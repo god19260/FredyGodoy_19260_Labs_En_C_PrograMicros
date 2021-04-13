@@ -2521,12 +2521,43 @@ extern __bank0 __bit __timeout;
 
 
 
+ char Contador1 = 0;
+    char Dis_Centena;
+    char Dis_Decena;
+    char Dis_Unidad;
+    float Division;
+    char Centena;
+    char Decena;
+    char Unidad;
+    char multi = 1;
+void __attribute__((picinterrupt(("")))) isr (void){
+
+    if (T0IF == 1){
+
+        multi = 1;
+        TMR0 = 246;
+        T0IF = 0;
+    }
+
+
+    if (RBIF == 1){
+
+        if(RB6 == 0){
+            PORTC++;
+        }
+        if(RB7 == 0){
+            PORTC--;
+        }
+        RBIF = 0;
+    }
+}
 
 void main(void) {
 
-    IRCF0 = 1;
+    IRCF0 = 0;
     IRCF1 = 1;
-    IRCF2 = 0;
+    IRCF2 = 1;
+
 
     PS0 = 1;
     PS1 = 0;
@@ -2534,39 +2565,86 @@ void main(void) {
     T0CS = 0;
     PSA = 0;
     INTCON = 0b10101000;
+    TMR0 = 246;
 
 
-    TRISA = 0;
+    OPTION_REGbits.nRBPU = 0;
+    WPUBbits.WPUB7=1;
+    WPUBbits.WPUB6=1;
+
+
+    IOCB7 = 1;
+    IOCB6 = 1;
+
+
+    ANSEL = 0;
+    ANSELH = 0;
+    TRISA = 0b11111000;
     TRISC = 0;
     TRISD = 0;
     TRISE = 0;
 
+
+    PORTA = 0;
     PORTB = 0;
     PORTC = 0;
-    PORTD = 01;
+    PORTD = 0;
     PORTE = 0;
+    RA0 =1;
+    char tabla [16]= {
+        0b0111111,
+        0b0000110,
+        0b1011011,
+        0b1001111,
+        0b1100110,
+        0b1101101,
+        0b1111101,
+        0b0000111,
+        0b1111111,
+        0b1100111,
+        0b1110111,
+        0b1111100,
+        0b0111001,
+        0b1011110,
+        0b1111001,
+        0b1110001,
+    };
 
-    int B_Inc = RB7;
-    int B_Dec = RB6;
-    int Unidades = RE2;
-    int Decenas = RE1;
-    int Centenas = RE0;
-    int Contador1 = 0;
-
-    for(;;){
-
-        RE2 =1;
-
+    while(1){
+        if (multi == 1){
+            multi = 0;
+            C_D_U(PORTC);
+            PORTD = 0;
+            if (RA0 == 1){
+                PORTD = tabla[Decena];
+                PORTA = 0b010;
+            }
+            else if(RA1 == 1){
+                PORTD = tabla[Unidad];
+                PORTA = 0b100;
+            }
+            else{
+                PORTD = tabla[Centena];
+                PORTA = 0b001;
+            }
+        }
     }
 
 }
 
-void __attribute__((picinterrupt(("")))) isr (void){
+int C_D_U (variable){
+    Division = variable/100;
+    Centena = (int)Division;
+
+    variable = variable-100*Centena;
+    Division = variable/10;
+    Decena = (int)Division;
 
 
-    if (T0IF == 1){
-        T0IF = 0;
+    variable = variable-10*Decena;
+    Division = variable;
+    Unidad = (int)Division;
 
-        TMR0 = 0;
-    }
+
+
 }
