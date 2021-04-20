@@ -1,4 +1,4 @@
-# 1 "Lab07.c"
+# 1 "Lab08.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "D:/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Lab07.c" 2
+# 1 "Lab08.c" 2
 
 
 
@@ -2495,7 +2495,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "D:/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 9 "Lab07.c" 2
+# 9 "Lab08.c" 2
 
 
 
@@ -2503,19 +2503,29 @@ extern __bank0 __bit __timeout;
 
 
 #pragma config FOSC = INTRC_CLKOUT
+
 #pragma config WDTE = OFF
 #pragma config PWRTE = OFF
 #pragma config MCLRE = OFF
+
 #pragma config CP = OFF
+
 #pragma config CPD = OFF
+
 #pragma config BOREN = OFF
 #pragma config IESO = OFF
+
 #pragma config FCMEN = OFF
+
 #pragma config LVP = ON
 
 
+
 #pragma config BOR4V = BOR40V
+
 #pragma config WRT = OFF
+
+
 
 
 
@@ -2530,6 +2540,12 @@ extern __bank0 __bit __timeout;
     char Decena;
     char Unidad;
     char multi = 1;
+
+
+void C_D_U (char variable);
+void Multiplexar(void);
+
+
 void __attribute__((picinterrupt(("")))) isr (void){
 
     if (T0IF == 1){
@@ -2553,7 +2569,6 @@ void __attribute__((picinterrupt(("")))) isr (void){
 }
 
 void main(void) {
-    RBIF = 1;
 
 
     IRCF0 = 0;
@@ -2593,6 +2608,17 @@ void main(void) {
     PORTD = 0;
     PORTE = 0;
     RA0 =1;
+
+
+    while(1){
+        if (multi == 1){
+            Multiplexar();
+        }
+    }
+}
+
+
+void Multiplexar (void){
     char tabla [16]= {
         0b0111111,
         0b0000110,
@@ -2611,29 +2637,23 @@ void main(void) {
         0b1111001,
         0b1110001,
     };
-
-    while(1){
-        if (multi == 1){
-            multi = 0;
-            C_D_U(PORTC);
-            PORTD = 0;
-            if (RA0 == 1){
-                PORTD = tabla[Decena];
-                PORTA = 0b010;
-            }
-            else if(RA1 == 1){
-                PORTD = tabla[Unidad];
-                PORTA = 0b100;
-            }
-            else{
-                PORTD = tabla[Centena];
-                PORTA = 0b001;
-            }
-        }
+    multi = 0;
+    C_D_U(PORTC);
+    PORTD = 0;
+    if (RA0 == 1){
+        PORTD = tabla[Decena];
+        PORTA = 0b010;
+    }
+    else if(RA1 == 1){
+        PORTD = tabla[Unidad];
+        PORTA = 0b100;
+    }
+    else{
+        PORTD = tabla[Centena];
+        PORTA = 0b001;
     }
 }
-
-int C_D_U (variable){
+void C_D_U (char variable){
     Division = variable/100;
     Centena = (int)Division;
 
@@ -2645,7 +2665,6 @@ int C_D_U (variable){
     variable = variable-10*Decena;
     Division = variable;
     Unidad = (int)Division;
-
 
 
 }

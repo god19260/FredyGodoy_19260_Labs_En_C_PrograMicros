@@ -12,25 +12,35 @@
 // 'C' source line config statements
 
 // CONFIG1
-#pragma config FOSC = INTRC_CLKOUT// Oscillator Selection bits (RC oscillator: CLKOUT function on RA6/OSC2/CLKOUT pin, RC on RA7/OSC1/CLKIN)
-#pragma config WDTE = OFF        // Watchdog Timer Enable bit (WDT enabled)
+#pragma config FOSC = INTRC_CLKOUT// Oscillator Selection bits (RC oscillator: 
+                // CLKOUT function on RA6/OSC2/CLKOUT pin, RC on RA7/OSC1/CLKIN)
+#pragma config WDTE = OFF       // Watchdog Timer Enable bit (WDT enabled)
 #pragma config PWRTE = OFF      // Power-up Timer Enable bit (PWRT disabled)
-#pragma config MCLRE = OFF       // RE3/MCLR pin function select bit (RE3/MCLR pin function is MCLR)
-#pragma config CP = OFF         // Code Protection bit (Program memory code protection is disabled)
-#pragma config CPD = OFF        // Data Code Protection bit (Data memory code protection is disabled)
-#pragma config BOREN = OFF       // Brown Out Reset Selection bits (BOR enabled)
-#pragma config IESO = OFF        // Internal External Switchover bit (Internal/External Switchover mode is enabled)
-#pragma config FCMEN = OFF       // Fail-Safe Clock Monitor Enabled bit (Fail-Safe Clock Monitor is enabled)
-#pragma config LVP = ON         // Low Voltage Programming Enable bit (RB3/PGM pin has PGM function, low voltage programming enabled)
+#pragma config MCLRE = OFF      // RE3/MCLR pin function select bit (RE3/MCLR 
+                                // pin function is MCLR)
+#pragma config CP = OFF         // Code Protection bit (Program memory code 
+                                // protection is disabled)
+#pragma config CPD = OFF        // Data Code Protection bit (Data memory code 
+                                // protection is disabled)
+#pragma config BOREN = OFF      // Brown Out Reset Selection bits (BOR enabled)
+#pragma config IESO = OFF       // Internal External Switchover bit 
+                                //(Internal/External Switchover mode is enabled)
+#pragma config FCMEN = OFF      // Fail-Safe Clock Monitor Enabled bit 
+                                // (Fail-Safe Clock Monitor is enabled)
+#pragma config LVP = ON         // Low Voltage Programming Enable bit (RB3/PGM 
+                       // pin has PGM function, low voltage programming enabled)
 
 // CONFIG2
-#pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out Reset set to 4.0V)
-#pragma config WRT = OFF        // Flash Program Memory Self Write Enable bits (Write protection off)
+#pragma config BOR4V = BOR40V   // Brown-out Reset Selection bit (Brown-out 
+                                // Reset set to 4.0V)
+#pragma config WRT = OFF        // Flash Program Memory Self Write Enable 
+                                // bits (Write protection off)
 
 // #pragma config statements should precede project file includes.
 // Use project enums instead of #define for ON and OFF.
 
-// Declaraciones de variables
+//------------------------------------------------------------------------------
+//********************* Declaraciones de variables *****************************
     char  Contador1 = 0;
     char  Dis_Centena;
     char  Dis_Decena;
@@ -40,6 +50,12 @@
     char  Decena;
     char  Unidad;
     char  multi = 1;
+//------------------------------------------------------------------------------
+//***************************** Prototipos *************************************
+void C_D_U (char variable);
+void Multiplexar(void);
+//------------------------------------------------------------------------------
+//*************************** Interrupciones ***********************************
 void __interrupt() isr (void){
     // Interrupcion del timer0
     if (T0IF == 1){
@@ -67,7 +83,7 @@ void main(void) {
     // Oscilador
     IRCF0 = 0;       // Configuración del reloj interno 
     IRCF1 = 1;
-    IRCF2 = 1;       // 500khz   
+    IRCF2 = 1;       // 4 Mhz   
     
     // Configurar Timer0
     PS0 = 1;
@@ -102,6 +118,17 @@ void main(void) {
     PORTD = 0;
     PORTE = 0;
     RA0 =1;
+    
+    //loop principal
+    while(1){  
+        if (multi == 1){
+            Multiplexar();
+        }
+    } // fin loop principal while 
+} // fin main
+
+
+void Multiplexar (void){
     char tabla [16]= {
         0b0111111, // Cero
         0b0000110, // Uno
@@ -120,29 +147,23 @@ void main(void) {
         0b1111001, // E
         0b1110001, // F
     }; 
-    //loop principal
-    while(1){  
-        if (multi == 1){
-            multi = 0;
-            C_D_U(PORTC);
-            PORTD = 0;
-            if (RA0 == 1){
-                PORTD = tabla[Decena];
-                PORTA = 0b010;
-            }
-            else if(RA1 == 1){
-                PORTD = tabla[Unidad];
-                PORTA = 0b100;
-            }
-            else{
-                PORTD = tabla[Centena];
-                PORTA = 0b001;
-            }
-        }
-    } // fin loop principal while 
-} // fin main
-
-int C_D_U (variable){
+    multi = 0;
+    C_D_U(PORTC);
+    PORTD = 0;
+    if (RA0 == 1){
+        PORTD = tabla[Decena];
+        PORTA = 0b010;
+    }
+    else if(RA1 == 1){
+        PORTD = tabla[Unidad];
+        PORTA = 0b100;
+    }
+    else{
+        PORTD = tabla[Centena];
+        PORTA = 0b001;
+    }
+}
+void C_D_U (char variable){
     Division = variable/100;
     Centena = (int)Division;
     
@@ -154,7 +175,6 @@ int C_D_U (variable){
     variable = variable-10*Decena;
     Division = variable;
     Unidad = (int)Division;
-    
     //char Valores[3]={Centena,Decena,Unidad};
     //return Valores;
 }
