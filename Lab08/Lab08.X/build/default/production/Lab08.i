@@ -2502,6 +2502,7 @@ extern __bank0 __bit __timeout;
 
 
 
+
 #pragma config FOSC = INTRC_CLKOUT
 
 #pragma config WDTE = OFF
@@ -2540,6 +2541,7 @@ extern __bank0 __bit __timeout;
     char Decena;
     char Unidad;
     char multi = 1;
+    char V_Display = 0;
 
 
 void C_D_U (char variable);
@@ -2547,6 +2549,21 @@ void Multiplexar(void);
 
 
 void __attribute__((picinterrupt(("")))) isr (void){
+
+    if (ADIF == 1){
+        ADIF = 0;
+        if (ADCON0bits.CHS == 3){
+            PORTC = ADRESH;
+            ADCON0bits.CHS = 4;
+        }
+        else{
+            V_Display = ADRESH;
+            ADCON0bits.CHS = 3;
+        }
+        _delay((unsigned long)((50)*(4000000/4000000.0)));
+        ADCON0bits.GO = 1;
+    }
+
 
     if (T0IF == 1){
 
@@ -2585,6 +2602,17 @@ void main(void) {
     TMR0 = 246;
 
 
+    PIE1bits.ADIE = 1;
+    ADIF = 0;
+    ADCON1bits.ADFM = 0;
+    ADCON1bits.VCFG0 = 0;
+    ADCON1bits.VCFG0 = 0;
+    ADCON0bits.ADCS0 = 0;
+    ADCON0bits.ADCS1 = 1;
+    ADCON0bits.ADON = 1;
+    _delay((unsigned long)((50)*(4000000/4000000.0)));
+    ADCON0bits.GO = 1;
+
     OPTION_REGbits.nRBPU = 0;
     WPUBbits.WPUB7=1;
     WPUBbits.WPUB6=1;
@@ -2594,7 +2622,7 @@ void main(void) {
     IOCB6 = 1;
 
 
-    ANSEL = 0;
+    ANSEL = 0b00011000;
     ANSELH = 0;
     TRISA = 0b11111000;
     TRISC = 0;
@@ -2611,9 +2639,7 @@ void main(void) {
 
 
     while(1){
-        if (multi == 1){
-            Multiplexar();
-        }
+        Multiplexar();
     }
 }
 
@@ -2638,7 +2664,7 @@ void Multiplexar (void){
         0b1110001,
     };
     multi = 0;
-    C_D_U(PORTC);
+    C_D_U(V_Display);
     PORTD = 0;
     if (RA0 == 1){
         PORTD = tabla[Decena];
@@ -2665,6 +2691,4 @@ void C_D_U (char variable){
     variable = variable-10*Decena;
     Division = variable;
     Unidad = (int)Division;
-
-
 }

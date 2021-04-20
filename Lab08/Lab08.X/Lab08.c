@@ -7,6 +7,7 @@
 
 
 #include <xc.h>
+#define _XTAL_FREQ 4000000
 // PIC16F887 Configuration Bit Settings
 
 // 'C' source line config statements
@@ -50,6 +51,7 @@
     char  Decena;
     char  Unidad;
     char  multi = 1;
+    char  V_Display = 0;
 //------------------------------------------------------------------------------
 //***************************** Prototipos *************************************
 void C_D_U (char variable);
@@ -57,6 +59,21 @@ void Multiplexar(void);
 //------------------------------------------------------------------------------
 //*************************** Interrupciones ***********************************
 void __interrupt() isr (void){
+    // Interrupcion del ADC module
+    if (ADIF == 1){
+        ADIF = 0;
+        if (ADCON0bits.CHS == 3){
+            PORTC = ADRESH;
+            ADCON0bits.CHS = 4;
+        } 
+        else{
+            V_Display = ADRESH;
+            ADCON0bits.CHS = 3;
+        }   
+        __delay_us(50);
+        ADCON0bits.GO = 1; 
+    }
+    
     // Interrupcion del timer0
     if (T0IF == 1){
         //Contador1++;
@@ -94,6 +111,17 @@ void main(void) {
     INTCON = 0b10101000;
     TMR0 = 246;
     
+    // Configuración del modulo ADC
+    PIE1bits.ADIE = 1;
+    ADIF = 0; // Bandera de interrupción
+    ADCON1bits.ADFM = 0; // Justificado a la izquierda    
+    ADCON1bits.VCFG0 = 0;
+    ADCON1bits.VCFG0 = 0; // Voltajes de referencia en VSS y VDD
+    ADCON0bits.ADCS0 = 0;
+    ADCON0bits.ADCS1 = 1; // FOSC/8
+    ADCON0bits.ADON = 1;
+    __delay_us(50);
+    ADCON0bits.GO = 1;
     // Configuración del puerto B
     OPTION_REGbits.nRBPU = 0;
     WPUBbits.WPUB7=1;
@@ -104,7 +132,7 @@ void main(void) {
     IOCB6 = 1;
     
     // Configurar puertos
-    ANSEL  = 0;
+    ANSEL  = 0b00011000;
     ANSELH = 0;
     TRISA  = 0b11111000;  // Definir el puerto A como salida
     TRISC  = 0;  // Definir el puerto C como salida
@@ -121,9 +149,7 @@ void main(void) {
     
     //loop principal
     while(1){  
-        if (multi == 1){
-            Multiplexar();
-        }
+        Multiplexar();
     } // fin loop principal while 
 } // fin main
 
@@ -148,7 +174,7 @@ void Multiplexar (void){
         0b1110001, // F
     }; 
     multi = 0;
-    C_D_U(PORTC);
+    C_D_U(V_Display);
     PORTD = 0;
     if (RA0 == 1){
         PORTD = tabla[Decena];
@@ -175,7 +201,5 @@ void C_D_U (char variable){
     variable = variable-10*Decena;
     Division = variable;
     Unidad = (int)Division;
-    //char Valores[3]={Centena,Decena,Unidad};
-    //return Valores;
 }
   
