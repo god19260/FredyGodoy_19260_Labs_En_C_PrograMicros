@@ -86,7 +86,7 @@ void main(void) {
     // Oscilador
     IRCF0 = 1;       // Configuración del reloj interno 
     IRCF1 = 1;
-    IRCF2 = 1;       // 4 Mhz   
+    IRCF2 = 1;       // 8 Mhz   
   
     INTCON = 0b11101000;
  
