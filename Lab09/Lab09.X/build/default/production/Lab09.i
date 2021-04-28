@@ -1,4 +1,4 @@
-# 1 "Lab08.c"
+# 1 "Lab09.c"
 # 1 "<built-in>" 1
 # 1 "<built-in>" 3
 # 288 "<built-in>" 3
@@ -6,7 +6,7 @@
 # 1 "<built-in>" 2
 # 1 "D:/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\language_support.h" 1 3
 # 2 "<built-in>" 2
-# 1 "Lab08.c" 2
+# 1 "Lab09.c" 2
 
 
 
@@ -2494,7 +2494,7 @@ extern __bank0 unsigned char __resetbits;
 extern __bank0 __bit __powerdown;
 extern __bank0 __bit __timeout;
 # 28 "D:/packs/Microchip/PIC16Fxxx_DFP/1.2.33/xc8\\pic\\include\\xc.h" 2 3
-# 8 "Lab08.c" 2
+# 8 "Lab09.c" 2
 
 
 
@@ -2543,8 +2543,7 @@ extern __bank0 __bit __timeout;
     char V_Display = 0;
 
 
-void C_D_U (char variable);
-void Multiplexar(void);
+
 
 
 void __attribute__((picinterrupt(("")))) isr (void){
@@ -2552,53 +2551,51 @@ void __attribute__((picinterrupt(("")))) isr (void){
     if (ADIF == 1){
         ADIF = 0;
         if (ADCON0bits.CHS == 3){
-            PORTC = ADRESH;
+            PORTB = ADRESH;
+            CCPR1L = (PORTB >> 1) + 126.1;
+            CCP1CONbits.DC1B1 = PORTBbits.RB0;
+            CCP1CONbits.DC1B0 = ADRESL>>7;
+
             ADCON0bits.CHS = 4;
         }
         else{
-            V_Display = ADRESH;
+            PORTB = ADRESH;
+            CCPR2L = (PORTB >> 1) + 125.5;
+            CCP2CONbits.DC2B1 = PORTBbits.RB0;
+            CCP2CONbits.DC2B0 = ADRESL>>7;
             ADCON0bits.CHS = 3;
         }
-        _delay((unsigned long)((50)*(4000000/4000000.0)));
+        _delay((unsigned long)((50)*(8000000/4000000.0)));
         ADCON0bits.GO = 1;
     }
 
-
-    if (T0IF == 1){
-
-        multi = 1;
-        TMR0 = 246;
-        T0IF = 0;
-    }
-
-
-    if (RBIF == 1){
-
-        if(RB6 == 0){
-            PORTC++;
-        }
-        if(RB7 == 0){
-            PORTC--;
-        }
-        RBIF = 0;
-    }
 }
 
 void main(void) {
 
 
-    IRCF0 = 0;
+    IRCF0 = 1;
     IRCF1 = 1;
     IRCF2 = 1;
 
+    INTCON = 0b11101000;
 
-    PS0 = 1;
-    PS1 = 0;
-    PS2 = 1;
-    T0CS = 0;
-    PSA = 0;
-    INTCON = 0b10101000;
-    TMR0 = 246;
+
+    PR2 = 249;
+    CCP1CONbits.P1M = 0;
+    CCP1CONbits.CCP1M = 0b00001100;
+    CCP2CONbits.CCP2M = 0b00001100;
+    CCPR1L = 0x0F;
+    CCPR2L = 0x0F;
+    CCP1CONbits.DC1B = 0;
+    CCP2CONbits.DC2B0 = 0;
+    CCP2CONbits.DC2B1 = 0;
+
+
+    PIR1bits.TMR2IF = 0;
+    T2CONbits.T2CKPS0 = 1;
+    T2CONbits.T2CKPS1 = 1;
+    T2CONbits.TMR2ON = 1;
 
 
     PIE1bits.ADIE = 1;
@@ -2609,16 +2606,8 @@ void main(void) {
     ADCON0bits.ADCS0 = 0;
     ADCON0bits.ADCS1 = 1;
     ADCON0bits.ADON = 1;
-    _delay((unsigned long)((50)*(4000000/4000000.0)));
+    _delay((unsigned long)((50)*(8000000/4000000.0)));
     ADCON0bits.GO = 1;
-
-    OPTION_REGbits.nRBPU = 0;
-    WPUBbits.WPUB7=1;
-    WPUBbits.WPUB6=1;
-
-
-    IOCB7 = 1;
-    IOCB6 = 1;
 
 
     ANSEL = 0b00011000;
@@ -2626,6 +2615,7 @@ void main(void) {
     TRISA = 0b11111000;
     TRISC = 0;
     TRISD = 0;
+    TRISB = 0;
     TRISE = 0;
 
 
@@ -2638,56 +2628,6 @@ void main(void) {
 
 
     while(1){
-        Multiplexar();
+
     }
-}
-
-
-void Multiplexar (void){
-    char tabla [16]= {
-        0b0111111,
-        0b0000110,
-        0b1011011,
-        0b1001111,
-        0b1100110,
-        0b1101101,
-        0b1111101,
-        0b0000111,
-        0b1111111,
-        0b1100111,
-        0b1110111,
-        0b1111100,
-        0b0111001,
-        0b1011110,
-        0b1111001,
-        0b1110001,
-    };
-    multi = 0;
-    C_D_U(V_Display);
-    PORTD = 0;
-    if (RA0 == 1){
-        PORTD = tabla[Decena];
-        PORTA = 0b010;
-    }
-    else if(RA1 == 1){
-        PORTD = tabla[Unidad];
-        PORTA = 0b100;
-    }
-    else{
-        PORTD = tabla[Centena];
-        PORTA = 0b001;
-    }
-}
-void C_D_U (char variable){
-    Division = variable/100;
-    Centena = (int)Division;
-
-    variable = variable-100*Centena;
-    Division = variable/10;
-    Decena = (int)Division;
-
-
-    variable = variable-10*Decena;
-    Division = variable;
-    Unidad = (int)Division;
 }

@@ -30,7 +30,7 @@ idataBANK0 CODE 0 3A8 3A8 11 2
 dataBANK0 BANK0 1 50 50 11 1
 bssCOMMON COMMON 1 76 76 4 1
 config CONFIG 4 2007 2007 2 2
-$C:\Users\fredy\AppData\Local\Temp\soco.o
+$C:\Users\fredy\AppData\Local\Temp\sj9o.o
 reset_vec CODE 0 0 0 3 2
 end_init CODE 0 10 10 3 2
 config CONFIG 4 2007 2007 2 2
@@ -80,56 +80,56 @@ STRING 3B9-1FFF 2
 # All other numeric values are in decimal.
 %LINETAB
 $dist/default/production\Lab08.X.production.o
-13 cinit CODE >538:C:\Users\fredy\AppData\Local\Temp\soco.s
-13 cinit CODE >541:C:\Users\fredy\AppData\Local\Temp\soco.s
-13 cinit CODE >621:C:\Users\fredy\AppData\Local\Temp\soco.s
-14 cinit CODE >622:C:\Users\fredy\AppData\Local\Temp\soco.s
-15 cinit CODE >623:C:\Users\fredy\AppData\Local\Temp\soco.s
-16 cinit CODE >624:C:\Users\fredy\AppData\Local\Temp\soco.s
-17 cinit CODE >625:C:\Users\fredy\AppData\Local\Temp\soco.s
-18 cinit CODE >626:C:\Users\fredy\AppData\Local\Temp\soco.s
-19 cinit CODE >627:C:\Users\fredy\AppData\Local\Temp\soco.s
-1A cinit CODE >628:C:\Users\fredy\AppData\Local\Temp\soco.s
-1B cinit CODE >629:C:\Users\fredy\AppData\Local\Temp\soco.s
-1C cinit CODE >630:C:\Users\fredy\AppData\Local\Temp\soco.s
-21 cinit CODE >634:C:\Users\fredy\AppData\Local\Temp\soco.s
-22 cinit CODE >635:C:\Users\fredy\AppData\Local\Temp\soco.s
-23 cinit CODE >636:C:\Users\fredy\AppData\Local\Temp\soco.s
-24 cinit CODE >637:C:\Users\fredy\AppData\Local\Temp\soco.s
-25 cinit CODE >638:C:\Users\fredy\AppData\Local\Temp\soco.s
-26 cinit CODE >639:C:\Users\fredy\AppData\Local\Temp\soco.s
-27 cinit CODE >640:C:\Users\fredy\AppData\Local\Temp\soco.s
-28 cinit CODE >641:C:\Users\fredy\AppData\Local\Temp\soco.s
-29 cinit CODE >644:C:\Users\fredy\AppData\Local\Temp\soco.s
-2A cinit CODE >645:C:\Users\fredy\AppData\Local\Temp\soco.s
-2B cinit CODE >646:C:\Users\fredy\AppData\Local\Temp\soco.s
-2C cinit CODE >647:C:\Users\fredy\AppData\Local\Temp\soco.s
-2D cinit CODE >653:C:\Users\fredy\AppData\Local\Temp\soco.s
-2D cinit CODE >655:C:\Users\fredy\AppData\Local\Temp\soco.s
-2E cinit CODE >656:C:\Users\fredy\AppData\Local\Temp\soco.s
-4 intentry CODE >61:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2F0 text7 CODE >61:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2F0 text7 CODE >63:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2F4 text7 CODE >64:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2F5 text7 CODE >65:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2FE text7 CODE >66:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-300 text7 CODE >67:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-304 text7 CODE >68:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-305 text7 CODE >70:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-309 text7 CODE >71:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-30D text7 CODE >73:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-312 text7 CODE >74:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-315 text7 CODE >78:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-319 text7 CODE >80:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-31B text7 CODE >81:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-31D text7 CODE >82:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-31E text7 CODE >86:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-322 text7 CODE >88:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-326 text7 CODE >89:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-32A text7 CODE >91:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-32E text7 CODE >92:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-330 text7 CODE >94:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-331 text7 CODE >96:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+13 cinit CODE >538:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+13 cinit CODE >541:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+13 cinit CODE >621:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+14 cinit CODE >622:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+15 cinit CODE >623:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+16 cinit CODE >624:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+17 cinit CODE >625:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+18 cinit CODE >626:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+19 cinit CODE >627:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+1A cinit CODE >628:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+1B cinit CODE >629:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+1C cinit CODE >630:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+21 cinit CODE >634:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+22 cinit CODE >635:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+23 cinit CODE >636:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+24 cinit CODE >637:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+25 cinit CODE >638:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+26 cinit CODE >639:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+27 cinit CODE >640:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+28 cinit CODE >641:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+29 cinit CODE >644:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+2A cinit CODE >645:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+2B cinit CODE >646:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+2C cinit CODE >647:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+2D cinit CODE >653:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+2D cinit CODE >655:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+2E cinit CODE >656:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+4 intentry CODE >60:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2F0 text7 CODE >60:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2F0 text7 CODE >62:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2F4 text7 CODE >63:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2F5 text7 CODE >64:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2FE text7 CODE >65:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+300 text7 CODE >66:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+304 text7 CODE >67:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+305 text7 CODE >69:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+309 text7 CODE >70:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+30D text7 CODE >72:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+312 text7 CODE >73:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+315 text7 CODE >77:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+319 text7 CODE >79:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+31B text7 CODE >80:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+31D text7 CODE >81:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+31E text7 CODE >85:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+322 text7 CODE >87:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+326 text7 CODE >88:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+32A text7 CODE >90:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+32E text7 CODE >91:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+330 text7 CODE >93:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+331 text7 CODE >95:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
 239 text6 CODE >5:C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\awdiv.c
 239 text6 CODE >13:C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\awdiv.c
 23C text6 CODE >14:C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\awdiv.c
@@ -211,88 +211,88 @@ $dist/default/production\Lab08.X.production.o
 1B3 text3 CODE >42:C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\xxtofl.c
 1B4 text3 CODE >43:C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\xxtofl.c
 1BC text3 CODE >44:C:\Program Files\Microchip\xc8\v2.20\pic\sources\c90\common\xxtofl.c
-31 text2 CODE >192:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-34 text2 CODE >193:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-5F text2 CODE >194:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-72 text2 CODE >196:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-82 text2 CODE >197:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-AD text2 CODE >198:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-C0 text2 CODE >201:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-D0 text2 CODE >202:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-ED text2 CODE >203:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-100 text2 CODE >204:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+31 text2 CODE >191:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+34 text2 CODE >192:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+5F text2 CODE >193:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+72 text2 CODE >195:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+82 text2 CODE >196:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+AD text2 CODE >197:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+C0 text2 CODE >200:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+D0 text2 CODE >201:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+ED text2 CODE >202:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+100 text2 CODE >203:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+33A text1 CODE >156:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
 33A text1 CODE >157:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-33A text1 CODE >158:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-351 text1 CODE >176:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-352 text1 CODE >177:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-358 text1 CODE >178:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-35B text1 CODE >179:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-35F text1 CODE >180:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-365 text1 CODE >181:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-367 text1 CODE >182:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-368 text1 CODE >183:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-36C text1 CODE >184:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-372 text1 CODE >185:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-374 text1 CODE >186:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-375 text1 CODE >188:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-37B text1 CODE >189:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-37D text1 CODE >191:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2A2 maintext CODE >98:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2A2 maintext CODE >101:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2A5 maintext CODE >102:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2A6 maintext CODE >103:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2A7 maintext CODE >106:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2A8 maintext CODE >107:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2A9 maintext CODE >108:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2AA maintext CODE >109:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2AB maintext CODE >110:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2AC maintext CODE >111:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2AE maintext CODE >112:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2B2 maintext CODE >115:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2B5 maintext CODE >116:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2B8 maintext CODE >117:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2BB maintext CODE >118:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2BC maintext CODE >119:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2BD maintext CODE >120:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2C0 maintext CODE >121:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2C1 maintext CODE >122:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2C2 maintext CODE >123:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2C9 maintext CODE >124:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2CC maintext CODE >126:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2CF maintext CODE >127:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2D0 maintext CODE >128:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2D1 maintext CODE >131:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2D2 maintext CODE >132:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2D3 maintext CODE >135:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2D7 maintext CODE >136:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2D8 maintext CODE >137:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2DC maintext CODE >138:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2DD maintext CODE >139:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2DE maintext CODE >140:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2DF maintext CODE >143:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2E2 maintext CODE >144:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2E3 maintext CODE >145:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2E4 maintext CODE >146:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2E5 maintext CODE >147:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2E6 maintext CODE >148:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-2E7 maintext CODE >152:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
-395 inittext CODE >595:C:\Users\fredy\AppData\Local\Temp\soco.s
-395 inittext CODE >596:C:\Users\fredy\AppData\Local\Temp\soco.s
-396 inittext CODE >597:C:\Users\fredy\AppData\Local\Temp\soco.s
-397 inittext CODE >598:C:\Users\fredy\AppData\Local\Temp\soco.s
-398 inittext CODE >599:C:\Users\fredy\AppData\Local\Temp\soco.s
-399 inittext CODE >606:C:\Users\fredy\AppData\Local\Temp\soco.s
-399 inittext CODE >607:C:\Users\fredy\AppData\Local\Temp\soco.s
-39E inittext CODE >608:C:\Users\fredy\AppData\Local\Temp\soco.s
-39F inittext CODE >609:C:\Users\fredy\AppData\Local\Temp\soco.s
-3A0 inittext CODE >610:C:\Users\fredy\AppData\Local\Temp\soco.s
-3A1 inittext CODE >611:C:\Users\fredy\AppData\Local\Temp\soco.s
-3A2 inittext CODE >612:C:\Users\fredy\AppData\Local\Temp\soco.s
-3A3 inittext CODE >613:C:\Users\fredy\AppData\Local\Temp\soco.s
-3A4 inittext CODE >614:C:\Users\fredy\AppData\Local\Temp\soco.s
-3A5 inittext CODE >615:C:\Users\fredy\AppData\Local\Temp\soco.s
-3A6 inittext CODE >616:C:\Users\fredy\AppData\Local\Temp\soco.s
-3A7 inittext CODE >617:C:\Users\fredy\AppData\Local\Temp\soco.s
+351 text1 CODE >175:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+352 text1 CODE >176:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+358 text1 CODE >177:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+35B text1 CODE >178:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+35F text1 CODE >179:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+365 text1 CODE >180:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+367 text1 CODE >181:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+368 text1 CODE >182:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+36C text1 CODE >183:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+372 text1 CODE >184:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+374 text1 CODE >185:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+375 text1 CODE >187:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+37B text1 CODE >188:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+37D text1 CODE >190:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2A2 maintext CODE >97:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2A2 maintext CODE >100:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2A5 maintext CODE >101:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2A6 maintext CODE >102:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2A7 maintext CODE >105:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2A8 maintext CODE >106:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2A9 maintext CODE >107:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2AA maintext CODE >108:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2AB maintext CODE >109:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2AC maintext CODE >110:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2AE maintext CODE >111:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2B2 maintext CODE >114:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2B5 maintext CODE >115:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2B8 maintext CODE >116:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2BB maintext CODE >117:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2BC maintext CODE >118:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2BD maintext CODE >119:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2C0 maintext CODE >120:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2C1 maintext CODE >121:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2C2 maintext CODE >122:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2C9 maintext CODE >123:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2CC maintext CODE >125:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2CF maintext CODE >126:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2D0 maintext CODE >127:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2D1 maintext CODE >130:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2D2 maintext CODE >131:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2D3 maintext CODE >134:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2D7 maintext CODE >135:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2D8 maintext CODE >136:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2DC maintext CODE >137:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2DD maintext CODE >138:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2DE maintext CODE >139:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2DF maintext CODE >142:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2E2 maintext CODE >143:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2E3 maintext CODE >144:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2E4 maintext CODE >145:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2E5 maintext CODE >146:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2E6 maintext CODE >147:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+2E7 maintext CODE >151:D:\UVG\Ciclo_1__2021\Progra_Micros\FredyGodoy_19260_Labs_En_C_PrograMicros\Lab08\Lab08.X\Lab08.c
+395 inittext CODE >595:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+395 inittext CODE >596:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+396 inittext CODE >597:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+397 inittext CODE >598:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+398 inittext CODE >599:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+399 inittext CODE >606:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+399 inittext CODE >607:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+39E inittext CODE >608:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+39F inittext CODE >609:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+3A0 inittext CODE >610:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+3A1 inittext CODE >611:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+3A2 inittext CODE >612:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+3A3 inittext CODE >613:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+3A4 inittext CODE >614:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+3A5 inittext CODE >615:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+3A6 inittext CODE >616:C:\Users\fredy\AppData\Local\Temp\sj9o.s
+3A7 inittext CODE >617:C:\Users\fredy\AppData\Local\Temp\sj9o.s
 # %SYMTAB Section
 # An enumeration of all symbols in the program.
 # The beginning of the section is indicated by %SYMTAB.
@@ -321,10 +321,10 @@ _RBIF 58 0 ABS 0 - dist/default/production\Lab08.X.production.o
 _T0CS 40D 0 ABS 0 - dist/default/production\Lab08.X.production.o
 _T0IF 5A 0 ABS 0 - dist/default/production\Lab08.X.production.o
 _TMR0 1 0 ABS 0 - dist/default/production\Lab08.X.production.o
-___sp 0 0 STACK 2 stack C:\Users\fredy\AppData\Local\Temp\soco.o
+___sp 0 0 STACK 2 stack C:\Users\fredy\AppData\Local\Temp\sj9o.o
 _main 544 0 CODE 0 maintext dist/default/production\Lab08.X.production.o
 btemp 7E 0 ABS 0 - dist/default/production\Lab08.X.production.o
-start 20 0 CODE 0 init C:\Users\fredy\AppData\Local\Temp\soco.o
+start 20 0 CODE 0 init C:\Users\fredy\AppData\Local\Temp\sj9o.o
 __size_of___awdiv 0 0 ABS 0 - dist/default/production\Lab08.X.production.o
 __size_of___fltol 0 0 ABS 0 - dist/default/production\Lab08.X.production.o
 __size_of_main 0 0 ABS 0 - dist/default/production\Lab08.X.production.o
@@ -333,12 +333,12 @@ _OPTION_REGbits 81 0 ABS 0 - dist/default/production\Lab08.X.production.o
 __LidataBANK0 0 0 ABS 0 idataBANK0 -
 C_D_U@variable 3A 0 BANK0 1 cstackBANK0 dist/default/production\Lab08.X.production.o
 __Hpowerup 0 0 CODE 0 powerup -
-intlevel0 0 0 ENTRY 0 functab C:\Users\fredy\AppData\Local\Temp\soco.o
-intlevel1 0 0 ENTRY 0 functab C:\Users\fredy\AppData\Local\Temp\soco.o
-intlevel2 0 0 ENTRY 0 functab C:\Users\fredy\AppData\Local\Temp\soco.o
-intlevel3 0 0 ENTRY 0 functab C:\Users\fredy\AppData\Local\Temp\soco.o
-intlevel4 0 0 ENTRY 0 functab C:\Users\fredy\AppData\Local\Temp\soco.o
-intlevel5 0 0 ENTRY 0 functab C:\Users\fredy\AppData\Local\Temp\soco.o
+intlevel0 0 0 ENTRY 0 functab C:\Users\fredy\AppData\Local\Temp\sj9o.o
+intlevel1 0 0 ENTRY 0 functab C:\Users\fredy\AppData\Local\Temp\sj9o.o
+intlevel2 0 0 ENTRY 0 functab C:\Users\fredy\AppData\Local\Temp\sj9o.o
+intlevel3 0 0 ENTRY 0 functab C:\Users\fredy\AppData\Local\Temp\sj9o.o
+intlevel4 0 0 ENTRY 0 functab C:\Users\fredy\AppData\Local\Temp\sj9o.o
+intlevel5 0 0 ENTRY 0 functab C:\Users\fredy\AppData\Local\Temp\sj9o.o
 __LbssCOMMON 0 0 ABS 0 bssCOMMON -
 ___bmul@multiplicand 74 0 COMMON 1 cstackCOMMON dist/default/production\Lab08.X.production.o
 wtemp0 7E 0 ABS 0 - dist/default/production\Lab08.X.production.o
@@ -357,15 +357,15 @@ __end_of___awdiv 544 0 CODE 0 text6 dist/default/production\Lab08.X.production.o
 __end_of___fltol 472 0 CODE 0 text4 dist/default/production\Lab08.X.production.o
 _Centena 68 0 BANK0 1 bssBANK0 dist/default/production\Lab08.X.production.o
 _INTCON B 0 ABS 0 - dist/default/production\Lab08.X.production.o
-___stackhi 0 0 ABS 0 - C:\Users\fredy\AppData\Local\Temp\soco.o
-___stacklo 0 0 ABS 0 - C:\Users\fredy\AppData\Local\Temp\soco.o
+___stackhi 0 0 ABS 0 - C:\Users\fredy\AppData\Local\Temp\sj9o.o
+___stacklo 0 0 ABS 0 - C:\Users\fredy\AppData\Local\Temp\sj9o.o
 __size_of_C_D_U 0 0 ABS 0 - dist/default/production\Lab08.X.production.o
 _Multiplexar 674 0 CODE 0 text1 dist/default/production\Lab08.X.production.o
 _WPUBbits 95 0 ABS 0 - dist/default/production\Lab08.X.production.o
 start_initialization 26 0 CODE 0 cinit dist/default/production\Lab08.X.production.o
 __pcstackBANK0 20 0 BANK0 1 cstackBANK0 dist/default/production\Lab08.X.production.o
 _Unidad 66 0 BANK0 1 bssBANK0 dist/default/production\Lab08.X.production.o
-___int_sp 0 0 STACK 2 stack C:\Users\fredy\AppData\Local\Temp\soco.o
+___int_sp 0 0 STACK 2 stack C:\Users\fredy\AppData\Local\Temp\sj9o.o
 __Hbank0 0 0 ABS 0 bank0 -
 __Hbank1 0 0 ABS 0 bank1 -
 __Hbank2 0 0 ABS 0 bank2 -
@@ -422,7 +422,7 @@ saved_w 7E 0 ABS 0 - dist/default/production\Lab08.X.production.o
 ___xxtofl 202 0 CODE 0 text3 dist/default/production\Lab08.X.production.o
 __end_of_isr 674 0 CODE 0 text7 dist/default/production\Lab08.X.production.o
 __Lintentry 8 0 CODE 0 intentry -
-reset_vec 0 0 CODE 0 reset_vec C:\Users\fredy\AppData\Local\Temp\soco.o
+reset_vec 0 0 CODE 0 reset_vec C:\Users\fredy\AppData\Local\Temp\sj9o.o
 __end_of___xxtofl 37A 0 CODE 0 text3 dist/default/production\Lab08.X.production.o
 __pdataBANK0 50 0 BANK0 1 dataBANK0 dist/default/production\Lab08.X.production.o
 __size_of___bmul 0 0 ABS 0 - dist/default/production\Lab08.X.production.o

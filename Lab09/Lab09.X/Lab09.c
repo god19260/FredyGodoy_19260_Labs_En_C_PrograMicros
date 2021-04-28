@@ -6,7 +6,7 @@
 
 
 #include <xc.h>
-#define _XTAL_FREQ 4000000
+#define _XTAL_FREQ 8000000
 // PIC16F887 Configuration Bit Settings
 
 // 'C' source line config statements
@@ -53,8 +53,7 @@
     char  V_Display = 0;
 //------------------------------------------------------------------------------
 //***************************** Prototipos *************************************
-void C_D_U (char variable);
-void Multiplexar(void);
+
 //------------------------------------------------------------------------------
 //*************************** Interrupciones ***********************************
 void __interrupt() isr (void){
@@ -62,54 +61,52 @@ void __interrupt() isr (void){
     if (ADIF == 1){
         ADIF = 0;
         if (ADCON0bits.CHS == 3){
-            PORTC = ADRESH;
+            PORTB = ADRESH;
+            CCPR1L = (PORTB >> 1) + 126.1;
+            CCP1CONbits.DC1B1 = PORTBbits.RB0;
+            CCP1CONbits.DC1B0 = ADRESL>>7;
+            
             ADCON0bits.CHS = 4;
         } 
         else{
-            V_Display = ADRESH;
+            PORTB = ADRESH;
+            CCPR2L = (PORTB >> 1) + 125.5;
+            CCP2CONbits.DC2B1 = PORTBbits.RB0;
+            CCP2CONbits.DC2B0 = ADRESL>>7;
             ADCON0bits.CHS = 3;
         }   
         __delay_us(50);
         ADCON0bits.GO = 1; 
     }
-    
-    // Interrupcion del timer0
-    if (T0IF == 1){
-        //Contador1++;
-        multi = 1;
-        TMR0 = 246;  
-        T0IF = 0;
-    } // Fin de interrupción timer0
-    
-    // Interrupcion del PORTB
-    if (RBIF == 1){
-       
-        if(RB6 == 0){
-            PORTC++;
-        }
-        if(RB7 == 0){
-            PORTC--;
-        }
-        RBIF = 0; 
-    }// Fin de interrupción del PORTB
+  
 }    
 
 void main(void) {
     
     // Oscilador
-    IRCF0 = 0;       // Configuración del reloj interno 
+    IRCF0 = 1;       // Configuración del reloj interno 
     IRCF1 = 1;
     IRCF2 = 1;       // 4 Mhz   
+  
+    INTCON = 0b11101000;
+ 
+    // Configurar PWM
+    PR2 = 249;
+    CCP1CONbits.P1M = 0;
+    CCP1CONbits.CCP1M = 0b00001100;
+    CCP2CONbits.CCP2M = 0b00001100;
+    CCPR1L = 0x0F;
+    CCPR2L = 0x0F;
+    CCP1CONbits.DC1B = 0;
+    CCP2CONbits.DC2B0 = 0;
+    CCP2CONbits.DC2B1 = 0;
     
-    // Configurar Timer0
-    PS0 = 1;
-    PS1 = 0;
-    PS2 = 1;         //Prescaler de 64
-    T0CS = 0;
-    PSA = 0;
-    INTCON = 0b10101000;
-    TMR0 = 246;
-    
+    // Configurarcion del TMR2
+    PIR1bits.TMR2IF = 0;
+    T2CONbits.T2CKPS0 = 1; //prescaler de 16
+    T2CONbits.T2CKPS1 = 1;
+    T2CONbits.TMR2ON = 1;
+   
     // Configuración del modulo ADC
     PIE1bits.ADIE = 1;
     ADIF = 0; // Bandera de interrupción
@@ -121,21 +118,14 @@ void main(void) {
     ADCON0bits.ADON = 1;
     __delay_us(50);
     ADCON0bits.GO = 1;
-    // Configuración del puerto B
-    OPTION_REGbits.nRBPU = 0;
-    WPUBbits.WPUB7=1;
-    WPUBbits.WPUB6=1;
-    
-    // Activación Interrup on change
-    IOCB7 = 1;
-    IOCB6 = 1;
-    
+
     // Configurar puertos
     ANSEL  = 0b00011000;
     ANSELH = 0;
     TRISA  = 0b11111000;  // Definir el puerto A como salida
     TRISC  = 0;  // Definir el puerto C como salida
     TRISD  = 0;  // Definir el puerto D como salida
+    TRISB  = 0;  // Definir el puerto B como salida
     TRISE  = 0;  // Definir el puerto E como salida
     
     //Limpieza de puertos
@@ -148,57 +138,9 @@ void main(void) {
     
     //loop principal
     while(1){  
-        Multiplexar();
+        
     } // fin loop principal while 
 } // fin main
 
 
-void Multiplexar (void){
-    char tabla [16]= {
-        0b0111111, // Cero
-        0b0000110, // Uno
-        0b1011011, // Dos
-        0b1001111, // Tres
-        0b1100110, // Cuatro
-        0b1101101, // Cinco
-        0b1111101, // Seis 
-        0b0000111, // Siete
-        0b1111111, // Ocho
-        0b1100111, // Nueve
-        0b1110111, // A
-        0b1111100, // B
-        0b0111001, // C
-        0b1011110, // D
-        0b1111001, // E
-        0b1110001, // F
-    }; 
-    multi = 0;
-    C_D_U(V_Display);
-    PORTD = 0;
-    if (RA0 == 1){
-        PORTD = tabla[Decena];
-        PORTA = 0b010;
-    }
-    else if(RA1 == 1){
-        PORTD = tabla[Unidad];
-        PORTA = 0b100;
-    }
-    else{
-        PORTD = tabla[Centena];
-        PORTA = 0b001;
-    }
-}
-void C_D_U (char variable){
-    Division = variable/100;
-    Centena = (int)Division;
-    
-    variable = variable-100*Centena;
-    Division = variable/10;
-    Decena = (int)Division;
-    
-    
-    variable = variable-10*Decena;
-    Division = variable;
-    Unidad = (int)Division;
-}
   
